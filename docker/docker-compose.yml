@@ -1,0 +1,14 @@
+version: "3"
+services:
+  postgres_car_management_system:
+    container_name: postgres_car_management_system
+    restart: always
+    image: car_management_system/postgres
+    build: ./postgres
+    ports:
+      - "5432:5432"
+    logging:
+      driver: json-file
+      options:
+        max-size: "200k"
+        max-file: "5"

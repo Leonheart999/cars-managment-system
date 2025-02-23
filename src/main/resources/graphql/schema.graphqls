@@ -1,0 +1,26 @@
+scalar BigDecimal
+
+type Car {
+    id: ID!
+    brand: String!
+    model: String!
+    color: String!
+    productionYear: Int!
+    price: BigDecimal!
+}
+
+
+type Query {
+    getAllCars: [Car]
+    getCarById(id: ID!): Car
+}
+
+type Mutation {
+    addCar(brand: String!, model: String!, color: String!, productionYear: Int!, price: BigDecimal!): Car
+    updateCar(id: ID!, brand: String, model: String, color: String, productionYear: Int, price: BigDecimal): Car
+    deleteCar(id: ID!): Boolean
+}
+
+type Subscription {
+    carUpdates: Car
+}
